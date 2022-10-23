@@ -16,7 +16,7 @@ function Ridge_FBA(metabolic_model,C,lambda)
 
     @variable(model,-1000<=v[1:size(reactions(metabolic_model),1)]<=1000)       
     
-    @constraint(model,[j in irreversible_indices],0<=v[j]<=1000) #+                                           #for v ++
+    @constraint(model,[j in irreversible_indices],0<=v[j]<=1000) #+                                           
     
     @constraint(model, s_matrix*v.==0)
    
