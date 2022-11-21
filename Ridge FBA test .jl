@@ -1,17 +1,16 @@
 using JuMP, Ipopt
 using Random
-using COBREXA
+using SBML
 using HTTP
 using Test
 
 
 ecoli_model=HTTP.get("http://bigg.ucsd.edu/static/models/e_coli_core.xml")
 write("e_coli_core.xml",ecoli_model.body)
-ecoli_metabolic_model=load_model("e_coli_core.xml")
+ecoli_metabolic_model=readSBML("e_coli_core.xml")
 
 
 for n in 1:length(reactions(ecoli_metabolic_model))
-    #println(n)
     if occursin("BIOMASS" , reactions(ecoli_metabolic_model)[n])
         global biomass_index=n
     end
