@@ -1,3 +1,8 @@
+"""
+Ridge FBA optimizes the desired objective function while minimizing L2 norm of the flux vector
+The flux vector computed by Ridge FBA is more consistent with the actual values
+"""
+
 using JuMP, Ipopt , SBML
 
 
