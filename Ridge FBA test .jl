@@ -2,7 +2,6 @@
 #flux dixtribution is computed and the value for objective function is tested
 
 using JuMP, Ipopt
-using Random
 using SBML
 using HTTP
 using Test
