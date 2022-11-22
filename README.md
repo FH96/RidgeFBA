@@ -24,8 +24,8 @@ flux_vector=Ridge_FBA(metabolic_model,c,lambda)
   **c** : a vector with the same length as the metabolic model reactions,determining the objective function
   For example,if biomass is meant to be the objective function, the corresponding element in in c vector is set to 1 and the others are zero 
   
-  **lambda** : regularization coefficient for the L2 norm term in. The larger lambda is, the smaller the flux vector will be.
+  **lambda** : regularization coefficient for the L2 norm term in the objective function of the optimization problem. The larger lambda is, the smaller the flux vector will be.
   
  #### Output:
-  **flux_vector**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
+  **flux_vector**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like any other vector. 
   
