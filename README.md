@@ -13,6 +13,18 @@ Pkg.add("JuMP")
 ```
 
 ## Usage
-This function. and returns the predicted flux vector
+This function can be called 
 
-V=Ridge_FBA(ecoli_metabolic_model,c_test,10^-5)
+flux_vector=Ridge_FBA(metabolic_model,c,lambda)
+
+ ######Input:
+  metabolic model (.xml), can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+  
+  c:a vector with the same length as the metabolic model reactions,determining the objective function
+  For example,if biomass is meant to be the objective function, the corresponding element in in c vector is set to 1 and the others are zero 
+  
+  lambda: regularization coefficient for the L2 norm term in. The larger lambda is, the smaller the flux vector will be.
+  
+ ######Output:
+  flux_vector: 
+  
