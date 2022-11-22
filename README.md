@@ -13,18 +13,19 @@ Pkg.add("JuMP")
 ```
 
 ## Usage
-This function can be called 
-
+This function can be called simply, by a single line of code:
+```
 flux_vector=Ridge_FBA(metabolic_model,c,lambda)
+```
 
- ##### Input:
-  ###### metabolic model (.xml), can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+ #### Input:
+  ##### metabolic model (.xml), can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
   
-  ###### c:a vector with the same length as the metabolic model reactions,determining the objective function
+  ##### c:a vector with the same length as the metabolic model reactions,determining the objective function
   For example,if biomass is meant to be the objective function, the corresponding element in in c vector is set to 1 and the others are zero 
   
-  ###### lambda: regularization coefficient for the L2 norm term in. The larger lambda is, the smaller the flux vector will be.
+  ##### lambda: regularization coefficient for the L2 norm term in. The larger lambda is, the smaller the flux vector will be.
   
- ##### Output:
-  ###### flux_vector: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
+ #### Output:
+  ##### flux_vector: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like anyother vector. 
   
