@@ -11,6 +11,18 @@ They can be installed as the following example:
 using Pkg
 Pkg.add("JuMP")
 ```
+## Formulation
+Ridge FBA solves the following quadratic programming problem. By to find a context-specific objective function
+
+Minimize: c𝒗 − R*‖𝒗‖<sub>𝟐</sub>
+Subject to: Sv=0
+            v_j≥0         ∀    j ϵ Irreversible reactions
+
+
+ 
+Where R is regularization coefficient, S is stoichometric matrix. 
+
+
 
 ## Usage
 This function can be called simply, by a single line of code:
@@ -27,5 +39,5 @@ flux_vector=Ridge_FBA(metabolic_model,c,lambda)
   **lambda** : regularization coefficient for the L2 norm term in the objective function of the optimization problem. The larger lambda is, the smaller the flux vector will be.
   
  #### Output:
-  **flux_vector**: is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like any other vector. 
+  **flux_vector**: It is the calculated flux distribution, which is of type Vector{Float64} (a vector whose elements are Float94), So this can be indexed and used like any other vector. 
   
