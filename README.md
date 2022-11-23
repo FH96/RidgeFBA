@@ -18,7 +18,7 @@ Ridge FBA solves the following quadratic programming to find a context-specific 
 
 *Subject to: Sv=0*
 
-            v<sub>j</sub> ≥0         ∀    j ϵ *Irreversible reactions*
+            v<sub>j</sub> ≥0         ∀    j ϵ Irreversible reactions
 
 
  
