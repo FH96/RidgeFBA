@@ -12,9 +12,10 @@ using Pkg
 Pkg.add("JuMP")
 ```
 ## Formulation
-Ridge FBA solves the following quadratic programming problem. By to find a context-specific objective function
+Ridge FBA solves the following quadratic programming to find a context-specific objective function
 
 Minimize: c𝒗 − R*‖𝒗‖<sub>𝟐</sub>
+
 Subject to: Sv=0
             v_j≥0         ∀    j ϵ Irreversible reactions
 
