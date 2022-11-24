@@ -8,7 +8,7 @@ using JuMP, Ipopt , SBML
 
 function Ridge_FBA(metabolic_model,C,lambda)
        
-    #determining irreversible reactions to set the appropriate boundary
+    #determining irreversible to set the appropriate boundary
     irreversible_indices=[]
     lb,ub=flux_bounds(metabolic_model)
     for i in 1:length(metabolic_model.reactions)        
@@ -24,7 +24,7 @@ function Ridge_FBA(metabolic_model,C,lambda)
     model=JuMP.Model(optimizer_with_attributes(Ipopt.Optimizer))
 
     #Defining the flux variables 
-    @variable(model,-1000<=v[1:size(reactions(metabolic_model),1)]<=1000)       
+    @variable(model,-1000<=v[1:length(metabolic_model.reactions)]<=1000)       
 
     #Constraint regarding irreversible reactions
     @constraint(model,[j in irreversible_indices],0<=v[j]<=1000) #+                                           
@@ -36,7 +36,7 @@ function Ridge_FBA(metabolic_model,C,lambda)
     nonzero=findall(x->x!=0,C)
     n_selected=size(nonzero,1)
 
-    @objective(model,Max,sum(C[i]*v[i] for i in 1:size(v,1) ) - (n_selected/size(reactions(metabolic_model),1))*lambda*sum(v[e]^2 for e in 1:size(v,1)))
+    @objective(model,Max,sum(C[i]*v[i] for i in 1:size(v,1) ) - (n_selected/length(metabolic_model.reactions))*lambda*sum(v[e]^2 for e in 1:size(v,1)))
 
 
     #giving random initial values to the variables
