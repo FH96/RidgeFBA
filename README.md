@@ -16,13 +16,18 @@ Ridge FBA solves the following quadratic programming to find a context-specific 
 
 *Minimize:* c𝒗 − *R* *‖𝒗‖<sub>𝟐</sub>
 
-*Subject to: Sv=0*
-
-            v<sub>j</sub> ≥0         ∀    j ϵ Irreversible reactions
+*Minimize:*
 
 
+$$cv - 𝑹∗\parallel v \parallel_2$$
+
+*Subject to:*
+
+$$Sv=0$$
+
+$$v_j \geq 0 \quad \forall j \in I$$
  
-Where R is regularization coefficient, S is stoichometric matrix. 
+Where R is regularization coefficient, v is flux vector, S is stoichometric matrix and I is the set of irreversible reactions. 
 
 
 
