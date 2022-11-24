@@ -21,7 +21,7 @@ function Ridge_FBA(metabolic_model,C,lambda)
     _,_,s_matrix=stoichiometry_matrix(metabolic_model)
 
     #Defining the optimization model and the solver 
-    model=JuMP.Model(with_optimizer(Ipopt.Optimizer,hessian_constant="yes",max_iter=1000))
+    model=JuMP.Model(optimizer_with_attributes(Ipopt.Optimizer))
 
     #Defining the flux variables 
     @variable(model,-1000<=v[1:size(reactions(metabolic_model),1)]<=1000)       
