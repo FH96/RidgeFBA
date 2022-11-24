@@ -1,12 +1,12 @@
-#In this script the metabolic model 'e_coli_core' is  downloaded and by assumption of biomass as objective function,
-#flux dixtribution is computed and the value for objective function is tested
+# In this script the metabolic model 'e_coli_core' is  downloaded and by assumption of biomass as objective function,
+# flux dixtribution is computed and the value for objective function is tested
 
 using JuMP, Ipopt
 using SBML
 using HTTP
 using Test
 
-#Downloading the metabolic model
+# Downloading the metabolic model
 ecoli_model=HTTP.get("http://bigg.ucsd.edu/static/models/e_coli_core.xml")
 write("e_coli_core.xml",ecoli_model.body)
 ecoli_metabolic_model=readSBML("e_coli_core.xml")
