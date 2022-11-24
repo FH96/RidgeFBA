@@ -38,7 +38,7 @@ flux_vector=Ridge_FBA(metabolic_model,c,lambda)
 ```
 
  #### Input:
-  **metabolic model**: Metabolic models contain sotoichiometric matrix above all and also other information such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
+  **metabolic model**: Metabolic models contain stoichiometric matrix above all, and also other informations such as flux boundaries and Gene-Protein-Reaction rules. They can be found in different formats including .xml. Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
   
   **c**: A vector with the same length as the metabolic model reactions, determining the objective function.
   For example, if biomass is meant to be the objective function, the corresponding element in c vector is set to 1 and the others are zero. 
