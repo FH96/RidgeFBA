@@ -2,19 +2,11 @@
 
 Ridge FBA is a member of COBRA analyses family. It returns a unique flux disrtibution which is also  more consistent with the actual values comparing to the similar methods
 
-## Prerequisites
-Ridge FBA reads SBML models by [SBML.jl](https://github.com/LCSB-BioCore/SBML.jl), models the optimization problem by [JuMP.jl](https://github.com/jump-dev/JuMP.jl) and uses [Ipopt.jl](https://github.com/jump-dev/Ipopt.jl) as the solver. 
 
-So these three packages are required to run ridge FBA, in addition [HTTP.jl](https://github.com/JuliaWeb/HTTP.jl) and [Test.jl](https://github.com/JuliaLang/julia/blob/master/stdlib/Test/src/Test.jl) are needed to run the test script for this function. 
-They can be installed as the following example:
-```
-using Pkg
-Pkg.add("JuMP")
-```
 ## Formulation
 Ridge FBA solves the following quadratic programming to find a context-specific objective function
 
-*Minimize:* c𝒗 − *R* *‖𝒗‖<sub>𝟐</sub>
+
 
 *Minimize:*
 
@@ -29,7 +21,15 @@ $$v_j \geq 0 \quad \forall j \in I$$
  
 Where R is regularization coefficient, v is flux vector, S is stoichometric matrix and I is the set of irreversible reactions. 
 
+## Prerequisites
+Ridge FBA reads SBML models by [SBML.jl](https://github.com/LCSB-BioCore/SBML.jl), models the optimization problem by [JuMP.jl](https://github.com/jump-dev/JuMP.jl) and uses [Ipopt.jl](https://github.com/jump-dev/Ipopt.jl) as the solver. 
 
+So these three packages are required to run ridge FBA, in addition [HTTP.jl](https://github.com/JuliaWeb/HTTP.jl) and [Test.jl](https://github.com/JuliaLang/julia/blob/master/stdlib/Test/src/Test.jl) are needed to run the test script for this function. 
+They can be installed as the following example:
+```
+using Pkg
+Pkg.add("JuMP")
+```
 
 ## Usage
 This function can be called simply, by a single line of code:
