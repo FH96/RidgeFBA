@@ -1,4 +1,4 @@
-# Ridge-FBA
+# Ridge FBA
 
 Ridge FBA is a member of COBRA analyses family. It returns a unique flux distribution which is also more consistent with the actual values comparing to the similar methods.
 
