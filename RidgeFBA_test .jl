@@ -30,7 +30,7 @@ end
 
 
 #As biomass is set as objective function the corresponding element in in c vector is set to 1
-c_test=zeros(1,length(reactions(ecoli_metabolic_model)))
+c_test=zeros(1,length(ecoli_metabolic_model.reactions))
 c_test[biomass_index]=1
 
 
