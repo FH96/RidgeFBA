@@ -38,7 +38,6 @@ function Ridge_FBA(metabolic_model,C,lambda)
 
     @objective(model,Max,sum(C[i]*v[i] for i in 1:size(v,1) ) - (n_selected/length(metabolic_model.reactions))*lambda*sum(v[e]^2 for e in 1:size(v,1)))
 
-
     #giving random initial values to the variables
     for i in 1:size(v,1)
         if i in irreversible_indices
@@ -49,6 +48,13 @@ function Ridge_FBA(metabolic_model,C,lambda)
     end
     
     JuMP.optimize!(model)
+
+    # If the solver terminates without finding the optimal solution, the termination status is printed out for user 
+    if JuMP.raw_status(model)!="Solve_Succeeded"
+        println(JuMP.termination_status(model))
+                     
+    end
+
 
 
     return JuMP.value.(v)
