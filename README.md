@@ -1,10 +1,10 @@
 # Ridge FBA
 
-Ridge FBA is a member of COBRA analyses family. It returns a unique flux distribution which is also more consistent with the actual values comparing to the similar methods.
+`RidgeFBA` is a member of COBRA analyses family. It returns a unique flux distribution which is also more consistent with the actual values comparing to the similar methods.
 
 
 ## Formulation
-Ridge FBA solves the following quadratic programming to find a context-specific objective function:
+`RidgeFBA` solves the following quadratic programming to find a context-specific objective function:
 
 
 
