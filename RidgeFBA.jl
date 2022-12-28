@@ -9,8 +9,8 @@
 #-------------------------------------------------------------------------------------------
 
 """
-Ridge FBA optimizes the desired objective function while minimizing L2 norm of the flux vector
-The flux vector computed by Ridge FBA is more consistent with the actual values
+RidgeFBA optimizes the desired objective function while minimizing L2 norm of the flux vector
+The flux vector computed by RidgeFBA is more consistent with the actual values
 
 
 # INPUTS
@@ -35,14 +35,14 @@ The flux vector computed by Ridge FBA is more consistent with the actual values
 
 # EXAMPLES
 
-flux_vector=Ridge_FBA(ecoli_metabolic_model,c_test,10^-5)                                                          
+flux_vector=RidgeFBA(ecoli_metabolic_model,c_test,10^-5)                                                          
 
 """
 
 using JuMP, Ipopt , SBML
 
 
-function Ridge_FBA(metabolic_model,C,lambda)
+function RidgeFBA(metabolic_model,C,lambda)
        
     #determining irreversible to set the appropriate boundary
     irreversible_indices=[]
