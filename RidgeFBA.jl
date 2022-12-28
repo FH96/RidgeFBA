@@ -9,6 +9,8 @@
 #-------------------------------------------------------------------------------------------
 
 """
+    RidgeFBA(metabolic_model,c,lambda) 
+
 RidgeFBA optimizes the desired objective function while minimizing L2 norm of the flux vector
 The flux vector computed by RidgeFBA is more consistent with the actual values
 
@@ -19,12 +21,14 @@ The flux vector computed by RidgeFBA is more consistent with the actual values
                     and Gene-Protein-Reaction rules. They can be found in different formats including .xml.
                     Metabolic models can be downloaded from [BiGG Models](http://bigg.ucsd.edu/) or elsewhere.
 
-- lambda:           Regularization coefficient for the L2 norm term in the objective function of the optimization problem.
-                    The larger lambda, the smaller the flux vector.
-
 - c:                A vector with the same length as the metabolic model reactions, determining the objective function.
                     For example, if biomass is meant to be the objective function, the corresponding element in c vector
                     is set to 1 and the others are zero. 
+
+
+- lambda:           Regularization coefficient for the L2 norm term in the objective function of the optimization problem.
+                    The larger lambda, the smaller the flux vector.
+
  
 
 # OUTPUTS
@@ -33,9 +37,9 @@ The flux vector computed by RidgeFBA is more consistent with the actual values
                     (a vector whose elements are Float64), So this can be indexed and used like any other vector. 
 
 
-# EXAMPLES
+# EXAMPLE
 
-flux_vector=RidgeFBA(ecoli_metabolic_model,c_test,10^-5)                                                          
+flux_vector=(metabolic_model,c,lambda)                                                           
 
 """
 
