@@ -35,7 +35,7 @@ c_test[biomass_index]=1
 
 
 
-flux_vector=Ridge_FBA(ecoli_metabolic_model,c_test,10^-5)                                                          
+flux_vector=RidgeFBA(ecoli_metabolic_model,c_test,10^-5)                                                          
 
                                                            
 @test isapprox(flux_vector[biomass_index] ,46.17244338638067; atol=0.001)
