@@ -1,4 +1,5 @@
-# In this script the metabolic model 'e_coli_core' is  downloaded and by assumption of biomass as objective function,
+# This script can be used to test the funcionality of RidgeFBA 
+# Here, the metabolic model 'e_coli_core' is  downloaded and by assumption of biomass as objective function,
 # flux dixtribution is computed and the value for objective function is tested
 
 using JuMP, Ipopt
